@@ -26,7 +26,7 @@ conda_temp="$HOME/.conda"
 if [ "$HOME" == "/home/vcap" ]; then conda_temp="$HOME/app/.conda"; fi
 
 if [ ! -e "$build/conda_runtime.txt" ]; then
-	conda_runtime="Miniconda-3.10.1-Linux-x86_64.sh"
+	conda_runtime="Miniconda3-2.2.2-Linux-x86_64.sh"
 else
 	conda_runtime=$(cat "$build/conda_runtime.txt")
 fi
