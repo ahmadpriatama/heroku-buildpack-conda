@@ -26,7 +26,7 @@ conda_temp="$HOME/.conda"
 if [ "$HOME" == "/home/vcap" ]; then conda_temp="$HOME/app/.conda"; fi
 
 if [ ! -e "$build/conda_runtime.txt" ]; then
-	conda_runtime="Miniconda3-2.2.2-Linux-x86_64.sh"
+	conda_runtime="Miniconda3-3.16.0-Linux-x86_64.sh"
 else
 	conda_runtime=$(cat "$build/conda_runtime.txt")
 fi
@@ -47,7 +47,7 @@ rm $miniconda_installer
 export PATH=$PATH:$conda_temp/bin
 
 echo "---> Updating environment"
-conda update --yes --quiet --all
+#conda update --yes --quiet --all
 
 echo "-----> Installing Dependencies..."
 conda env update -n root -f "$build/environment.yml"
